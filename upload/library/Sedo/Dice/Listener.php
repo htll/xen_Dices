@@ -126,7 +126,7 @@ class Sedo_Dice_Listener
 						$dieNumber = 1;
 					}
 
-					if($dice >= 100)
+					if($dieNumber >= 100)
         			        {
                 			        $options['error'] = 'tooManyDice';
                 			        return;
