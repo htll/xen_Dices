@@ -125,6 +125,13 @@ class Sedo_Dice_Listener
 					{
 						$dieNumber = 1;
 					}
+
+					if($dice >= 100)
+        			        {
+                			        $options['error'] = 'tooManyDice';
+                			        return;
+               				 }
+
 					
 					$dieType = filter_var($wipDice[1], FILTER_SANITIZE_NUMBER_INT);
 				}
@@ -194,17 +201,6 @@ class Sedo_Dice_Listener
 			return;
 		}		
 
-		if($dice < 0)
-		{
-			$options['error'] = 'emptyDice';
-			return;
-		}	
-	
-		if($dice >= 100)
-		{
-			$options['error'] = 'tooManyDice';
-			return;
-		}	
 
 		/*Data management section*/
 		foreach($dice as &$die)
