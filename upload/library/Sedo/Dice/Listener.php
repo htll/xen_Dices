@@ -194,6 +194,18 @@ class Sedo_Dice_Listener
 			return;
 		}		
 
+		if($dice < 0)
+		{
+			$options['error'] = 'emptyDice';
+			return;
+		}	
+	
+		if($dice >= 100)
+		{
+			$options['error'] = 'tooManyDice';
+			return;
+		}	
+
 		/*Data management section*/
 		foreach($dice as &$die)
 		{
